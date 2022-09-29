@@ -1,0 +1,159 @@
+@charset "UTF-8";
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Noto Serif JP", serif;
+}
+
+/* fv */
+.fv-area {
+  height: 100vh;
+  width: 100vw;
+  background: #87ceeb;
+  position: relative;
+}
+.fv-area .fv-tit {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  z-index: 3;
+  color: #fff;
+  text-shadow: 2px 2px 2px rgb(0 0 0 / 80%), -2px 2px 2px rgb(0 0 0 / 80%), 2px -2px 2px rgb(0 0 0 / 80%), -2px -2px 2px rgb(0 0 0 / 80%);
+  font-size: 32px;
+}
+
+.fv-img-wrap {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+.fv-img-wrap.fv01 {
+  top: 0;
+  z-index: 2;
+}
+.fv-img-wrap img {
+  width: 100%;
+}
+
+/* fv アイコン */
+.para_ico {
+  position: absolute;
+  width: 48px;
+  z-index: 2;
+}
+
+.para_ico01 {
+  left: -80px;
+  bottom: 25vw;
+}
+
+.para_ico02 {
+  right: -80px;
+  top: 25vw;
+}
+
+/* fv アイコン */
+.para_ico03 {
+  left: -48px;
+  bottom: -10%;
+}
+
+.para_ico04 {
+  right: -48px;
+  bottom: -50%;
+}
+
+.para_ico05 {
+  left: -48px;
+  top: -10px;
+}
+
+.para_ico06 {
+  right: -48px;
+  top: -20%;
+}
+
+/* fv下 ビジュアル */
+.next-v {
+  width: 100%;
+  height: 100vh;
+  background: #f4f4f4;
+  position: relative;
+  z-index: 0;
+}
+.next-v img {
+  width: 100%;
+}
+.yama_ico {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  z-index: -1;
+  /* opacity: 0.5; */
+
+}
+.yama_ico.active {
+  animation: fadeIn 10s ease 0s;
+}
+.yama_ico img {
+  width: 100%;
+}
+.concept {
+  padding-top: 80px;
+  background: #f4f4f4;
+  /* position: relative; */
+}
+
+.concept h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 45px;
+}
+
+.concept p {
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  line-height: 2.6;
+  margin-bottom: 65px;
+}
+.more_btn{
+  display: block;
+  font-size: 1.6rem;
+}
+
+.more_btn:before{
+  
+}
+
+/* アニメ */
+
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
