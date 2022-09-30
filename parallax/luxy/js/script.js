@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let scrollTopPos = window.pageYOffset;
         let elmMoreBtnPosArray = new Array();
     
-    // morebtnの上座標取得
+    // .scroll_triggerの上座標取得
     for(i=0; i < elmScrollTrigger.length; i++){
         let elmMoreBtnRect = elmScrollTrigger[i].getBoundingClientRect();
         elmMoreBtnPosArray[i] = elmMoreBtnRect.top;

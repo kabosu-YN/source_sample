@@ -4,13 +4,13 @@ html {
 }
 body {
   font-family: "Noto Serif JP", serif;
+  color: #333;
 }
 
 /* fv */
 .fv-area {
+  width: 100%;
   height: 100vh;
-  width: 100vw;
-  background: #87ceeb;
   position: relative;
 }
 .fv-area .fv-tit {
@@ -27,7 +27,7 @@ body {
 }
 
 .fv-img-wrap {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   left: 0;
@@ -108,9 +108,8 @@ body {
   width: 100%;
 }
 .concept {
-  padding-top: 80px;
+  padding: 80px 0;
   background: #f4f4f4;
-  /* position: relative; */
 }
 
 .concept h2 {
@@ -127,15 +126,104 @@ body {
   margin-bottom: 65px;
 }
 .more_btn{
-  display: block;
+  display: flex;
+  justify-content: center;
   font-size: 1.6rem;
 }
+.more_btn span{
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 1px;
+  margin-right: 1em;
+}
+.more_btn span::before{
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #333;
+  position:absolute;
+  bottom: -14px;
+  left: 0;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  animation: drawArrow 1s ease-in-out forwards;
+}
+.more_btn span::after{
+  content: "";
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: #333;
+  position:absolute;
+  bottom: -6px;
+  right: -1px;
+  transform: scale(1, 0) rotate(45deg);
+  transform-origin: left bottom;
+  animation: drawArrowDig 1s ease-in-out 0.5s forwards;
 
-.more_btn:before{
-  
+}
+
+.more_btn.active span::before{
+  transform: scale(1, 1);
+}
+.more_btn.active span::after {
+  transform: scale(1, 1) rotate(45deg);
+}
+.about{
+
+}
+.about_img_wrap{
+  width: 50%;
+}
+
+.about_txt_wrap{
+  width: 50%;
+  font-size: 1.6rem;
+  padding: 2em;
 }
 
 /* アニメ */
+.fadeIn_totop{
+  animation: fadeInToTop 1s ease-in;
+}
+.curtain{
+  position: relative;
+  overflow: hidden;
+}
+.curtain::before{
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #c5c5c5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform-origin: right center;
+  transform: scaleX(1);
+  transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1) 0s, transform 1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+.curtain.active::before{
+  transform: scaleX(0);
+  width: 100%;
+}
+
+.curtain img{
+  opacity: 0;
+  position: relative;
+  left: -100%;
+  transition-property:all;
+  transition-delay:0s;
+  transition-duration:1.5s;
+}
+.curtain.active img{
+  opacity: 1;
+  left: 0;
+}
+
 
 @keyframes fadeIn{
   0% {
@@ -148,12 +236,29 @@ body {
 }
 
 
-@keyframes fadeIn{
+@keyframes drawArrow{
+  0% { transform: scale(0, 1); }
+  25% { transform: scale(0, 1); }
+  40% { transform: scale(1, 1); }
+  100% { transform: scale(1, 1); }
+}
+
+@keyframes drawArrowDig{
+  0% { transform: rotate(45deg) scale(1, 0); }
+  25% { transform: rotate(45deg) scale(1, 0); }
+  40% { transform: rotate(45deg) scale(1, 1); }
+  100% { transform: rotate(45deg) scale(1, 1); }
+}
+
+
+@keyframes fadeInToTop{
   0% {
     opacity: 0;
+    transform: translateY(50px);
   }
 
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
