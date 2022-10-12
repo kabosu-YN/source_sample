@@ -172,7 +172,15 @@ body {
   transform: scale(1, 1) rotate(45deg);
 }
 .about{
-
+  margin-top: 80px;
+  position: relative;
+}
+.about h2{
+  writing-mode: vertical-rl;
+  position:absolute;
+  top: 0;
+  right: 10%;
+  font-size: 2.4rem;
 }
 .about_img_wrap{
   width: 50%;
@@ -182,6 +190,10 @@ body {
   width: 50%;
   font-size: 1.6rem;
   padding: 2em;
+  position:absolute;
+  bottom: 0;
+  right: 10%;
+  background: #f4f4f4;
 }
 
 /* アニメ */
@@ -189,39 +201,32 @@ body {
   animation: fadeInToTop 1s ease-in;
 }
 .curtain{
-  position: relative;
   overflow: hidden;
+  width: 640px;
+  position: relative;
 }
 .curtain::before{
   content: "";
   display: block;
-  width: 0;
+  width: 100%;
   height: 100%;
   background: #c5c5c5;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
-  transform-origin: right center;
-  transform: scaleX(1);
-  transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1) 0s, transform 1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
-}
-.curtain.active::before{
-  transform: scaleX(0);
-  width: 100%;
+  z-index: 0;
+  animation: slideToRight 1s ease-in;
 }
 
 .curtain img{
-  opacity: 0;
-  position: relative;
-  left: -100%;
+  animation: slideToRight 1.5s ease-in, fadeIn 1s ease-in;
+  /* transform: translateX(-100%);
   transition-property:all;
-  transition-delay:0s;
-  transition-duration:1.5s;
+  transition-delay:1s;
+  transition-duration:1.5s; */
 }
 .curtain.active img{
-  opacity: 1;
-  left: 0;
+  /* transform: translateX(0); */
 }
 
 
@@ -260,5 +265,15 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideToRight{
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
