@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.img_zoom{
+    max-width: 400px;
+}
+
+.img_zoom_thumb{
+    max-width: 100px;
+}
+
+#modal_area{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.modal_inr{
+    width: 94vw;
+    height: 94vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
